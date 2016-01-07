@@ -1,17 +1,19 @@
-public class Sphere implements Shape{
+public class Cylinder implements Shape{
 	private double radius;
+	private double height;
 	
-	public Sphere(double radius){
+	public Cylinder(double radius, double height){
 		this.radius = radius;
+		this.height = height;
 	}
 	
 	public double getVolume() {
-		double volume = (4/3) * Math.PI * Math.pow(radius, 3);
+		double volume = Math.PI * Math.pow(this.radius, 2) * this.height;
 		return volume;
 	}
 	
 	public double getSurfaceArea() {
-		double surfaceArea = 4 * Math.PI * Math.pow(radius, 2);
+		double surfaceArea = (2 * Math.PI * this.radius * this.height) + (2 * Math.PI * Math.pow(this.radius, 2));
 		return surfaceArea;
 	}
 }
